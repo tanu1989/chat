@@ -15,17 +15,17 @@ class NavigationBanner extends React.Component {
     }
 
     state = {
-        activeRoomNumber: null
+        activeRoomNumber: null,
     }
 
     componentDidUpdate(prevProps){
-
         if(!prevProps.rooms.roomDetails && this.props.rooms.roomDetails){
             this.props.onChangeRoom(this.props.rooms.roomDetails[0].id);
             this.setState({
                 activeRoomNumber:this.props.rooms.roomDetails[0].id
             })
         }
+
 
     }
     changeNavItem =(val) => {
@@ -40,12 +40,16 @@ class NavigationBanner extends React.Component {
 
         const {login, rooms} = this.props;
 
+
         const user = login.user ;
+        var now = moment();
+        const sec = login.logTime ? (now).diff(login.logTime, 'seconds') : 0;
+        const min = sec/60 < 1 ? `${sec} seconds` : `${Math.floor(sec/60)} minutes`;
         return (
             <Col xs={2} className="pink full-height navigation-banner">
                 <Well className="pink">
                     <h3>{user}</h3>
-                    <h6>Online for XX minutes</h6>
+                    <h6>Online for {min}</h6>
                 </Well>
 
                 {(!rooms.loading && rooms.roomDetails) ?

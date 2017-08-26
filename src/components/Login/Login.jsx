@@ -48,6 +48,7 @@ class Login extends React.Component{
 
             <FormGroup  validationState={userValid}>
                 <FormControl
+                    autoFocus
                     type="text"
                     bsSize="large"
                     onChange={this.onTextChange}

@@ -37,6 +37,7 @@ class Footer extends React.Component {
             <div  className="message-form">
                 <FormGroup controlId="message">
                     <FormControl
+                        autoFocus
                         type="text"
                         bsSize="large"
                         value={this.state.message}

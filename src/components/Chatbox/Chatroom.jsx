@@ -41,7 +41,7 @@ class Chatroom extends React.Component {
         const {user} = this.props.login;
         const {detail} = this.props.room;
 
-        this.props.postMessage(detail.id, user, message);
+        this.props.postMessage(detail.id, user, message)
     }
 
     render(){

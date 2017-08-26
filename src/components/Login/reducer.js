@@ -23,7 +23,7 @@ const reduceSetUserNameSuccess = (state, action) => {
     return{
         ...state,
         loading: false,
-        logTime: moment().format(),
+        logTime: moment(),
         user: action.payload
     }
 

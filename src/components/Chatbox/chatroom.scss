@@ -11,6 +11,8 @@
       border: none;
     }
 
+
+
     .nav-stacked {
       li {
         a {
@@ -49,17 +51,33 @@
 
     }
     .mHeader {
-      height: 15%;
+      height: 10%;
       background-color: white;
       border-bottom: 3px solid #A1A1A1;
       text-align: center;
+
+      .loader {
+        width: 40px;
+        height: 40px;
+        margin-top: 25px;
+        border: 6px solid #f3f3f3;
+        border-top: 10px solid #FF1840;
+      }
+
+      .header-users{
+        padding: 0 20px;
+      }
     }
     .mContent {
-      height: 70%;
+      height: 80%;
       background-color: #F0F1F3;
-      overflow-y: scroll;
+      overflow: scroll;
       display: flex;
       flex-direction: column-reverse;
+      //.loader {
+      //  margin-left: 47%;
+      //  margin-bottom: 30%;
+      //}
 
       .message-banner {
           .well {
@@ -102,7 +120,7 @@
     }
 
     .mFooter {
-      height: 15%;
+      height: 10%;
       background-color: white;
       border-top: 3px solid #A1A1A1;
 
@@ -121,10 +139,22 @@
 
           button {
             border-color: transparent;
-            color: #FF1840;
+            color: #337ab7;
             font-weight: 600;
             width: 8%;
             background-image: none;
+            box-shadow: none;
+
+            &:active {
+              background-color: transparent;
+            }
+            &:focus {
+              outline: none;
+              background-color: transparent;
+            }
+            &:hover {
+              background-color: transparent;
+            }
           }
         }
       }
