@@ -1,0 +1,37 @@
+#login {
+
+  margin: 20% 30%;
+  text-align: center;
+
+  .has-error {
+    .form-control {
+      border: 2px solid #FF1840;
+    }
+  }
+  .form-control {
+    margin-bottom: 30px;
+  }
+
+  .btn-default {
+    background-image: none;
+    border: #FF1840;
+    font-size: 20px;
+    text-shadow: none;
+
+    &:hover {
+      color: white;
+      font-weight: 600;
+      background-color: darken(#FF1840, 20%);
+
+    }
+    &:active {
+      color: white;
+    }
+
+    &:focus {
+      color: white;
+      outline: none;
+    }
+  }
+
+}
