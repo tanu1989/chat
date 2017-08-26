@@ -1,0 +1,136 @@
+.chatroom-grid {
+  padding: 0;
+  margin: 0;
+
+
+  //navigation banner
+  .navigation-banner {
+    padding: 0;
+    .well {
+      background-image: none;
+      border: none;
+    }
+
+    .nav-stacked {
+      li {
+        a {
+          color: white !important;
+          font-size: 20px;
+          height: 60px;
+
+          &:hover {
+            background-color: #840B22;
+          }
+
+           &:focus {
+             background-color: #840B22;
+             color: white;
+             outline: none;
+           }
+        }
+      }
+    }
+
+    .nav-pills>li.active>a {
+          background-color: #840B22 !important;
+          color: white;
+        border-radius: 0;
+    }
+  }
+
+//message room
+  .message-room {
+    margin-left: 16.666%;
+    width: 83.333%;
+
+    .row {
+      margin-left: 0;
+      margin-right: 0;
+
+    }
+    .mHeader {
+      height: 15%;
+      background-color: white;
+      border-bottom: 3px solid #A1A1A1;
+      text-align: center;
+    }
+    .mContent {
+      height: 70%;
+      background-color: #F0F1F3;
+      overflow-y: scroll;
+      display: flex;
+      flex-direction: column-reverse;
+
+      .message-banner {
+          .well {
+            max-width: 30%;
+            word-break: break-all;
+            margin-left: 30px;
+            margin-bottom: 4px;
+            margin-top: 25px;
+            border-radius: 30px;
+            padding: 30px;
+            font-size: 15px;
+            background-image: none;
+          }
+        span {
+          margin-left: 34px;
+          font-size: 12px;
+        }
+
+      }
+      .self {
+        display: inline-block;
+        width: 100%;
+        .well {
+          max-width: 30%;
+          word-break: break-all;
+          margin-bottom: 4px;
+          margin-top: 25px;
+          border-radius: 30px;
+          padding: 30px;
+          font-size: 15px;
+          float: right;
+          background: #FF1840 none no-repeat right top;
+          color: white;
+          margin-right: 30px;
+        }
+        span {
+          display: none;
+        }
+      }
+    }
+
+    .mFooter {
+      height: 15%;
+      background-color: white;
+      border-top: 3px solid #A1A1A1;
+
+      .message-form {
+        padding: 20px;
+        align-items: center;
+
+        .form-group {
+          width: 100%;
+
+          input {
+            margin-right: 20px;
+            width: 90%;
+            float: left;
+          }
+
+          button {
+            border-color: transparent;
+            color: #FF1840;
+            font-weight: 600;
+            width: 8%;
+            background-image: none;
+          }
+        }
+      }
+    }
+
+  }
+
+
+}
