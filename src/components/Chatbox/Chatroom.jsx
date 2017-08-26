@@ -23,13 +23,20 @@ class Chatroom extends React.Component {
         room: PropTypes.object,
         roomMessages: PropTypes.object
     }
+    state = {
+        prevHeight: 0
+    }
 
     componentWillMount(){
         this.props.getRooms();
     }
 
     componentDidUpdate(){
+        var elem = document.getElementById('content');
 
+        if( this.state.prevHeight !== 0 && elem.scrollHeight > this.state.prevHeight){
+            document.getElementById('content').scrollTop = elem.scrollHeight;
+        }
     }
 
     handleChangeRoom = (selectedRoom) => {
@@ -41,7 +48,14 @@ class Chatroom extends React.Component {
         const {user} = this.props.login;
         const {detail} = this.props.room;
 
-        this.props.postMessage(detail.id, user, message)
+        const elem = document.getElementsByClassName('mContent');
+        this.setState({
+            prevHeight: elem[0].scrollHeight
+        })
+
+        this.props.postMessage(detail.id, user, message);
+
+
     }
 
     render(){

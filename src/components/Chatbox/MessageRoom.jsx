@@ -27,7 +27,7 @@ class MessageRoom extends React.Component {
                 <Row className="mHeader">
                     <Header room={room} login={login}/>
                 </Row>
-                <Row className="mContent">
+                <Row id='content' className="mContent">
                    <Message login={login} roomMessages={roomMessages}/>
                 </Row>
                 <Row className="mFooter">
