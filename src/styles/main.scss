@@ -1,0 +1,27 @@
+@import "../components/Login/login";
+@import "../components/Chatbox/chatroom";
+@import "./animations";
+
+
+
+body {
+  height: 100%;
+  margin: 0
+}
+
+.pink {
+  background-color: #FF1840 !important;
+  color: white;
+}
+
+.cpink {
+  color: #FF1840 !important;
+}
+
+.gray {
+  color: lighten(black, 25%) !important;
+}
+
+.full-height {
+  height: 100vh !important;
+}
