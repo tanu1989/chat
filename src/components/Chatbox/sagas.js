@@ -1,9 +1,11 @@
-import { call, fork, put, takeLatest} from 'redux-saga/effects';
+import { call, fork, put, takeLatest, select} from 'redux-saga/effects';
 import * as actions from './actions';
 import {setUser} from '../Login/actions';
 import axios from 'axios';
 
 var base = 'http://localhost:8081/api';
+
+export const getLogin = (state) => state.login;
 
 export const doGetRooms = () => {
         return axios.get(`${base}/rooms`)
@@ -81,8 +83,8 @@ export function* postMessage(action){
         // yield put({type: actions.POST_MESSAGES_SUCCESS});
         const response = yield call(doGetMessages, action.id);
         yield put({type: actions.GET_MESSAGES_SUCCESS, payload: response});
-        yield put(setUser(action.payload.name));
-
+        const detail2 = yield select(getLogin);
+        yield put(setUser(action.payload.name, detail2.logTime));
     }catch(error){
         yield put({type: actions.POST_MESSAGES_ERROR, payload: error})
     }

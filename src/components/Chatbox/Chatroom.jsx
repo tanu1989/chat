@@ -32,9 +32,11 @@ class Chatroom extends React.Component {
     }
 
     componentDidUpdate(){
+
+        const {prevHeight} = this.state;
         var elem = document.getElementById('content');
 
-        if( this.state.prevHeight !== 0 && elem.scrollHeight > this.state.prevHeight){
+        if( prevHeight !== 0 && elem.scrollHeight > prevHeight){
             document.getElementById('content').scrollTop = elem.scrollHeight;
         }
     }
@@ -45,12 +47,13 @@ class Chatroom extends React.Component {
     };
 
     handlePostMessage = (message) =>{
-        const {user} = this.props.login;
+        const {user, logTime} = this.props.login;
         const {detail} = this.props.room;
 
         const elem = document.getElementsByClassName('mContent');
         this.setState({
-            prevHeight: elem[0].scrollHeight
+            prevHeight: elem[0].scrollHeight,
+            previousTimeStamp: logTime
         })
 
         this.props.postMessage(detail.id, user, message);

@@ -1,5 +1,4 @@
 import * as actions from './actions'
-import moment from 'moment';
 
 export const initialState = {
 
@@ -23,8 +22,8 @@ const reduceSetUserNameSuccess = (state, action) => {
     return{
         ...state,
         loading: false,
-        logTime: moment(),
-        user: action.payload
+        logTime: action.payload.time,
+        user: action.payload.username
     }
 
 };

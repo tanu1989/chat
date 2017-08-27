@@ -40,7 +40,6 @@ class NavigationBanner extends React.Component {
 
         const {login, rooms} = this.props;
 
-
         const user = login.user ;
         var now = moment();
         const sec = login.logTime ? (now).diff(login.logTime, 'seconds') : 0;

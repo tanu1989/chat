@@ -1,12 +1,11 @@
 import { call, fork, put, takeLatest} from 'redux-saga/effects';
-import {browserHistory} from 'react-router';
 
 import * as actions from './actions';
 
-export const doSetUserName = (username) => {
+export const doSetUserName = (username, time) => {
     return new Promise((resolve) => {
         console.log(username);
-        setTimeout(resolve(username),1000);
+        setTimeout(resolve({username, time}),1000);
     }).then(resp => resp)
         .catch(error => {
             console.log('User:' + error);
@@ -16,7 +15,7 @@ export const doSetUserName = (username) => {
 }
 export function* setUserName(action) {
  try {
-     const res = yield call(doSetUserName, action.username);
+     const res = yield call(doSetUserName, action.username, action.time);
      yield put({type: actions.SET_USERNAME_SUCCESS, payload: res});
  }catch(error){
      yield put({type: actions.SET_USERNAME_ERROR, payload: error});

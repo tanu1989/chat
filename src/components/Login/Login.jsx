@@ -4,6 +4,8 @@ import {browserHistory, hashHistory} from 'react-router';
 import PropTypes from 'prop-types';
 import { setUser } from './actions';
 import {Button, FormControl, FormGroup} from 'react-bootstrap';
+import moment from 'moment';
+
 
 class Login extends React.Component{
 
@@ -30,7 +32,8 @@ class Login extends React.Component{
 
         if(username){
             //plumbed in for login activity later
-            this.props.setUser(username);
+            var time = moment();
+            this.props.setUser(username, time);
             browserHistory.push(`/chatroom`)
         }else
         {
@@ -71,7 +74,7 @@ class Login extends React.Component{
 export const mapDispatchToProps = (dispatch) => {
 
     return {
-        setUser: (username) => dispatch(setUser(username))
+        setUser: (username, time) => dispatch(setUser(username,time))
     }
 
 };
