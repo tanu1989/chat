@@ -43,7 +43,7 @@ class NavigationBanner extends React.Component {
         const user = login.user ;
         var now = moment();
         const sec = login.logTime ? (now).diff(login.logTime, 'seconds') : 0;
-        const min = sec/60 < 1 ? `${sec} seconds` : `${Math.floor(sec/60)} minutes`;
+        const min = sec/60 < 1 ? `${sec} seconds` : `${Math.floor(sec/60)} minute and ${sec%60} seconds`;
         return (
             <Col xs={2} className="pink full-height navigation-banner">
                 <Well className="pink">
