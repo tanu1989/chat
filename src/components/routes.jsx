@@ -1,5 +1,5 @@
 import React from 'react';
-import { IndexRedirect, Route, hashHistory, browserHistory } from 'react-router';
+import { IndexRedirect, Route, browserHistory } from 'react-router';
 import Login from '../components/Login/Login';
 import Chatroom from '../components/Chatbox/Chatroom'
 
